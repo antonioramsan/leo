@@ -55,6 +55,12 @@ http://localhost:80/leo.api/Media/archivos/1
 rewrite ^/leo.api/([^/]+)/([^/]+)/?$ /leo/index.php?c=$1&e=$2? last;
 rewrite ^/leo.api/([^/]+)/([^/]+)/([^/]+)/?$ /leo/index.php?c=$1&e=$2&i=$3? last;   
 ``` 
+## mod rewrite settings(APACHE)
+```plain
+RewriteEngine on
+RewriteRule ^leo.api/(.*)/(.*)/(.*)$ leo/index.php?c=$1&e=$2&i=$3 [QSA]
+RewriteRule ^leo.api/(.*)/(.*)$ leo/index.php?c=$1&e=$2 [QSA]
+```
 
 # Database scripts (mysql) 
 ```mysql
