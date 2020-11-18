@@ -236,9 +236,10 @@ function __construct($db)
         {
 				$storage[$field] = $instance[$field];
 				$stmt->bindParam(':' . $field ,  $storage[$field]);
-
         }
+
 		$rs = $stmt->execute();
+
 		if($rs == 1)
 		{
 				return  $this->_db->lastInsertId();

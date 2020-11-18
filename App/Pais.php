@@ -2,7 +2,7 @@
 namespace App;
 class Pais{
 	public $id;
-	public $Nombre;
+	public $nombre;
 	function __construct($db){
 
 	}

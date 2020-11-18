@@ -20,7 +20,7 @@ class Geo{
 		$list = $orm->select($filtro,
 							"paises",
 							"Pais",
-							array("id"=>"id","Nombre"=>"nombre"),
+							array("id"=>"id","nombre"=>"nombre"),
 							"","","");
 
 		return  iterator_to_array ($list);
@@ -31,12 +31,13 @@ class Geo{
 	function save_paises($data){
 		$orm = new \App\Core\Model($this->db);
 	    if($data["id"]>0){
+			
 			$instances = $this->paises( $data["id"] );
 			$instance = $instances[0];
-			$instance->Nombre = $data["Nombre"];
-			return $orm->save($instance , "paises", "id", array("id"=>"id","Nombre"=>"nombre"));;
+			$instance->nombre = $data["nombre"];
+			return $orm->save($instance , "paises", "id", array("id"=>"id","nombre"=>"nombre"));;
 		}else{
-			return $orm->save($data, "paises", "id", array("id"=>"id","Nombre"=>"nombre"));
+			return $orm->save($data, "paises", "id", array("id"=>"id","nombre"=>"nombre"));
 		}
 	}
 }

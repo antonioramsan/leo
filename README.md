@@ -40,6 +40,15 @@ response<--(json)---<--api--(list)--<--"orm"--database
     "contenido":"data:image/png;base64,sjsjjs"
 }
 ```
+> Ejemplo de un registro nuevo
+POST: leo.api/Geo/paises
+
+```json
+{
+    "id":0,
+    "nombre":"Alemania"
+}
+```
 
 # urls
 ```plain
